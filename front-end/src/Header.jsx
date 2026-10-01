@@ -2,6 +2,13 @@ import './Header.css'
 import logo from './logo.svg'
 import { Link } from 'react-router-dom'
 
+const links = [
+  {
+    name: "About Us",
+    path: "about"
+  }
+]
+
 /**
  * A React component that is used for the header displayed at the top of every page of the site.
  * @param {*} param0 an object holding any props passed to this component from its parent component
@@ -21,6 +28,11 @@ const Header = props => {
           <li className="nav-item">
             <Link to="/messages">Messages</Link>
           </li>
+          {links.map(link => (
+            <li key={link.path} className='nav-item'>
+              <Link to={`/${link.path}`}>{link.name}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
     </header>
