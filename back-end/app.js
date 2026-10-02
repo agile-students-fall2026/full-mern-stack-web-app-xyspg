@@ -78,5 +78,16 @@ app.post('/messages/save', async (req, res) => {
   }
 })
 
+app.get('/about', async (req, res) => {
+  return res.json({
+    imageUrl: 'https://github.com/xyspg.png?size=200',
+    text: `<div>
+     <p>Hi! I am a student at <span style='color: #57068c'>New York University</span></p>
+     <p>My major is <b>Computer Science</b>.</p>
+     <p>Thanks for reading this.</p>
+    </div>`,
+  })
+})
+
 // export the express app we created to make it available to other modules
 module.exports = app // CommonJS export style!
